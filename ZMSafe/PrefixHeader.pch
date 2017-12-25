@@ -1,0 +1,16 @@
+//
+//  PrefixHeader.pch
+//  ZMSafe
+//
+//  Created by CHT-Technology on 2017/12/25.
+//  Copyright © 2017年 CHT-Technology. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+#define iOS11 ([UIDevice currentDevice].systemVersion.doubleValue >= 11)
+
+#endif /* PrefixHeader_pch */
