@@ -7,7 +7,6 @@
 //
 
 #import "NSObject+Swizzle.h"
-#import <objc/runtime.h>
 
 @implementation NSObject (Swizzle)
 
@@ -56,7 +55,9 @@
     Method srcMethod = class_getClassMethod(srcClass, srcSel);
     Method swizzledMethod = class_getClassMethod([self class], swizzledSel);
     
-    BOOL addMethod = class_addMethod(srcClass, srcSel, method_getImplementation(srcMethod), method_getTypeEncoding(srcMethod));
+    //注意：类方法是存在于元类中，所以要添加到元类
+    srcClass = objc_getMetaClass(class_getName(srcClass));
+    BOOL addMethod = class_addMethod(srcClass, srcSel, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod));
     if (addMethod)
     {
         class_replaceMethod(srcClass, swizzledSel, method_getImplementation(srcMethod), method_getTypeEncoding(srcMethod));
