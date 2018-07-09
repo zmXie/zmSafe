@@ -1,12 +1,22 @@
 PODS:
   - ReactiveObjC (3.0.0)
+  - SensorsAnalyticsSDK (1.10.6):
+    - SensorsAnalyticsSDK/core (= 1.10.6)
+  - SensorsAnalyticsSDK/core (1.10.6)
 
 DEPENDENCIES:
   - ReactiveObjC (~> 3.0.0)
+  - SensorsAnalyticsSDK
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - ReactiveObjC
+    - SensorsAnalyticsSDK
 
 SPEC CHECKSUMS:
   ReactiveObjC: ce79989e8684b9086b5f8d0c74bc7b81a8729c9e
+  SensorsAnalyticsSDK: 3998c7876e200c15a7ff14eccc1dc5463a4f763b
 
-PODFILE CHECKSUM: 310ae80434ba36e17a6f4ea2a2a63e260ae05a89
+PODFILE CHECKSUM: f0081f8e39bb580ffb64f1280b3789a63520db95
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.5.3

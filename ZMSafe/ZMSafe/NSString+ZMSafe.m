@@ -12,7 +12,8 @@
 @implementation NSString (ZMSafe)
 static NSString *KStringClass = @"__NSCFString";
 
-+(void)load{
++(void)load
+{
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         [self zm_swizzleInstanceMethodWithSrcClass:NSClassFromString(KStringClass)
@@ -46,53 +47,51 @@ static NSString *KStringClass = @"__NSCFString";
     });
 }
 
-- (unichar)zm_safeCharacterAtIndex:(NSUInteger)index{
+- (unichar)zm_safeCharacterAtIndex:(NSUInteger)index
+{
     if(index >= self.length) return 0;
-    
     return [self zm_safeCharacterAtIndex:index];
 }
 
-- (NSString *)zm_safeSubstringFromIndex:(NSUInteger)from{
+- (NSString *)zm_safeSubstringFromIndex:(NSUInteger)from
+{
     if(from > self.length) return @"";
-    
     return [self zm_safeSubstringFromIndex:from];
-    
 }
 
-- (NSString *)zm_safeSubstringToIndex:(NSUInteger)to{
+- (NSString *)zm_safeSubstringToIndex:(NSUInteger)to
+{
     if(to > self.length) return self;
-    
     return [self zm_safeSubstringToIndex:to];
-    
 }
 
-- (NSString *)zm_safeSubstringWithRange:(NSRange)range{
+- (NSString *)zm_safeSubstringWithRange:(NSRange)range
+{
     if(range.location + range.length > self.length) return @"";
-    
     return [self zm_safeSubstringWithRange:range];
-    
 }
 
-- (NSRange)zm_safeRangeOfString:(NSString *)searchString{
+- (NSRange)zm_safeRangeOfString:(NSString *)searchString
+{
     if(!searchString) return NSMakeRange(0, 0);
-    
     return [self zm_safeRangeOfString:searchString];
 }
 
-- (double)zm_doubleValue{
-    
-    if ([self rangeOfString:@","].location != NSNotFound) {
+- (double)zm_doubleValue
+{
+    if ([self rangeOfString:@","].location != NSNotFound)
+    {
        return [[[self class] stringDeleteString:self] zm_doubleValue];
     }
-    
     return [self zm_doubleValue];
 }
 
-- (float)zm_floatValue{
-    if ([self rangeOfString:@","].location != NSNotFound) {
+- (float)zm_floatValue
+{
+    if ([self rangeOfString:@","].location != NSNotFound)
+    {
         return [[[self class] stringDeleteString:self] zm_floatValue];
     }
-    
     return [self zm_floatValue];
 }
 

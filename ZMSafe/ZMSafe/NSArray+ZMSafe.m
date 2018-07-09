@@ -14,7 +14,8 @@ static NSString *KArrayClass = @"__NSArrayI";
 static NSString *KArrayInitClass = @"__NSPlaceholderArray";
 
 
-+(void)load{
++(void)load
+{
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         
@@ -36,41 +37,36 @@ static NSString *KArrayInitClass = @"__NSPlaceholderArray";
                                        swizzledSel:@selector(zm_safeArrayByAddingObject:)];
         
     });
+
 }
 
-- (instancetype)zm_safeInitWithObjects:(id *)objects count:(NSUInteger)cnt{
-    //当遍历到的object为nil的时候，就按当前的cnt来截取
-    NSUInteger actuallyCnt = 0;
-    for (NSUInteger i = 0; i < cnt; i++) {
-        if (!objects[i]) {
-            break;
-        }
-        actuallyCnt++;
+- (instancetype)zm_safeInitWithObjects:(id *)objects count:(NSUInteger)cnt
+{
+    for (NSUInteger i = 0; i < cnt; i++)
+    {
+        if (!objects[i]) objects[i] = @"";
     }
-    
-    return [self zm_safeInitWithObjects:objects count:actuallyCnt];
+    return [self zm_safeInitWithObjects:objects count:cnt];
 }
 
-- (id)zm_safeObjectAtIndex:(NSUInteger)index{
+- (id)zm_safeObjectAtIndex:(NSUInteger)index
+{
     if (index >= self.count) return nil;
-    
     return [self zm_safeObjectAtIndex:index];
 }
 
-//解决array[index] 这种语法超出界面bug
-- (id)zm_safeObjectAtIndexedSubscript:(NSUInteger)index{
-    
+//解决array[index] 字面量语法超出界限的bug
+- (id)zm_safeObjectAtIndexedSubscript:(NSUInteger)index
+{
     if (index >= self.count) return nil;
-    
     return [self zm_safeObjectAtIndexedSubscript:index];
 }
 
-- (NSArray*)zm_safeArrayByAddingObject:(id)anObject{
+- (NSArray*)zm_safeArrayByAddingObject:(id)anObject
+{
     if(!anObject) return self;
-    
     return [self zm_safeArrayByAddingObject:anObject];
 }
-
 
 @end
 

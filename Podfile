@@ -3,6 +3,7 @@
 
 target 'ZMSafe' do
   pod 'ReactiveObjC', '~>3.0.0'
+  pod 'SensorsAnalyticsSDK'
 
   target 'ZMSafeTests' do
     inherit! :search_paths

@@ -12,7 +12,9 @@
 @implementation NSDictionary (ZMSafe)
 static NSString *KDictionaryClass = @"__NSPlaceholderDictionary";
 
-+(void)load{
++(void)load
+{
+    NSLog(@"NSDictionary + load");
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         [self zm_swizzleInstanceMethodWithSrcClass:NSClassFromString(KDictionaryClass)
@@ -21,18 +23,16 @@ static NSString *KDictionaryClass = @"__NSPlaceholderDictionary";
     });
 }
 
-- (instancetype)zm_safeInitWithObjects:(id*)objects forKeys:(id*)keys count:(NSUInteger)cnt{
-    
-    //当遍历到的value或key为nil的时候，就按当前的cnt来截取
-    NSUInteger actuallyCnt = 0;
-    for (NSUInteger i = 0; i < cnt; i++) {
-        if (!(keys[i] && objects[i])) {
-            break;
-        }
-        actuallyCnt++;
+- (instancetype)zm_safeInitWithObjects:(id*)objects forKeys:(id*)keys count:(NSUInteger)cnt
+{
+    for (NSUInteger i = 0; i < cnt; i++)
+    {
+        if(!keys[i]) keys[i] = @"";
+
+        if(!objects[i]) objects[i] = @"";
     }
     
-    return [self zm_safeInitWithObjects:objects forKeys:keys count:actuallyCnt];
+    return [self zm_safeInitWithObjects:objects forKeys:keys count:cnt];
 }
 
 @end

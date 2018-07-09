@@ -12,7 +12,8 @@
 @implementation NSMutableString (ZMSafe)
 static NSString *KMStringClass = @"__NSCFConstantString";
 
-+(void)load{
++(void)load
+{
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         [self zm_swizzleInstanceMethodWithSrcClass:NSClassFromString(KMStringClass)
@@ -37,33 +38,33 @@ static NSString *KMStringClass = @"__NSCFConstantString";
     });
 }
 
-- (void)zm_safeReplaceCharactersInRange:(NSRange)range withString:(NSString *)aString{
+- (void)zm_safeReplaceCharactersInRange:(NSRange)range withString:(NSString *)aString
+{
     if(range.location + range.length > self.length || !aString) return;
-    
     [self zm_safeReplaceCharactersInRange:range withString:aString];
 }
 
-- (void)zm_safeInsertString:(NSString *)aString atIndex:(NSUInteger)loc{
+- (void)zm_safeInsertString:(NSString *)aString atIndex:(NSUInteger)loc
+{
     if (!aString || loc > self.length) return;
-    
     [self zm_safeInsertString:aString atIndex:loc];
 }
 
-- (void)zm_safeDeleteCharactersInRange:(NSRange)range{
+- (void)zm_safeDeleteCharactersInRange:(NSRange)range
+{
     if(range.location + range.length > self.length) return;
-    
     [self zm_safeDeleteCharactersInRange:range];
 }
 
-- (void)zm_safeAppendString:(NSString *)aString{
+- (void)zm_safeAppendString:(NSString *)aString
+{
     if(!aString) return;
-    
     [self zm_safeAppendString:aString];
 }
 
-- (void)zm_safeSetString:(NSString *)aString{
+- (void)zm_safeSetString:(NSString *)aString
+{
     if(!aString) return;
-    
     [self zm_safeSetString:aString];
 }
 

@@ -12,7 +12,8 @@
 @implementation NSMutableDictionary (ZMSafe)
 static NSString *KMDictionaryClass = @"__NSDictionaryM";
 
-+(void)load{
++(void)load
+{
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         [self zm_swizzleInstanceMethodWithSrcClass:NSClassFromString(KMDictionaryClass)
@@ -20,9 +21,9 @@ static NSString *KMDictionaryClass = @"__NSDictionaryM";
                                        swizzledSel:@selector(zm_safeSetObject:forKey:)];
     });
 }
-- (void)zm_safeSetObject:(id)anObject forKey:(id <NSCopying>)aKey{
+- (void)zm_safeSetObject:(id)anObject forKey:(id <NSCopying>)aKey
+{
     if(!anObject || !aKey) return;
-    
     [self zm_safeSetObject:anObject forKey:aKey];
 }
 

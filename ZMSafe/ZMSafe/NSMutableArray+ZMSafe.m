@@ -12,11 +12,12 @@
 @implementation NSMutableArray (ZMSafe)
 static NSString *KMArrayClass = @"__NSArrayM";
 
-+(void)load{
++(void)load
+{
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        @autoreleasepool {
-            
+        @autoreleasepool
+        {
             [self zm_swizzleInstanceMethodWithSrcClass:NSClassFromString(KMArrayClass)
                                                 srcSel:@selector(addObject:)
                                            swizzledSel:@selector(zm_safeAddObject:)];
@@ -37,7 +38,8 @@ static NSString *KMArrayClass = @"__NSArrayM";
                                                 srcSel:@selector(objectAtIndex:)
                                            swizzledSel:@selector(zm_safeObjectAtIndex:)];
             
-            if (iOS11) {
+            if (iOS11)
+            {
                 [self zm_swizzleInstanceMethodWithSrcClass:NSClassFromString(KMArrayClass)
                                                     srcSel:@selector(objectAtIndexedSubscript:)
                                                swizzledSel:@selector(zm_safeObjectAtIndexedSubscript:)];
@@ -47,9 +49,10 @@ static NSString *KMArrayClass = @"__NSArrayM";
     });
 }
 
-- (void)zm_safeAddObject:(id)anObject{
-    
-    @autoreleasepool {
+- (void)zm_safeAddObject:(id)anObject
+{
+    @autoreleasepool
+    {
         if(!anObject)return;
         
         [self zm_safeAddObject:anObject];
@@ -57,46 +60,47 @@ static NSString *KMArrayClass = @"__NSArrayM";
     
 }
 
-- (void)zm_safeInsertObject:(id)anObject atIndex:(NSUInteger)index{
-    @autoreleasepool {
+- (void)zm_safeInsertObject:(id)anObject atIndex:(NSUInteger)index
+{
+    @autoreleasepool
+    {
         if(!anObject || index > self.count)return;
-        
         [self zm_safeInsertObject:anObject atIndex:index];
     }
-    
 }
 
-- (void)zm_safeRemoveObjectAtIndex:(NSUInteger)index{
-    @autoreleasepool {
+- (void)zm_safeRemoveObjectAtIndex:(NSUInteger)index
+{
+    @autoreleasepool
+    {
         if(index >= self.count) return;
-        
         [self zm_safeRemoveObjectAtIndex:index];
     }
-    
 }
 
-- (void)zm_safeReplaceObjectAtIndex:(NSUInteger)index withObject:(id)anObject{
-    @autoreleasepool {
+- (void)zm_safeReplaceObjectAtIndex:(NSUInteger)index withObject:(id)anObject
+{
+    @autoreleasepool
+    {
         if(index >= self.count || !anObject) return;
-        
         [self zm_safeReplaceObjectAtIndex:index withObject:anObject];
     }
-    
 }
 
-- (id)zm_safeObjectAtIndex:(NSUInteger)index{
-    @autoreleasepool {
+- (id)zm_safeObjectAtIndex:(NSUInteger)index
+{
+    @autoreleasepool
+    {
         if (index >= self.count) return nil;
-        
         return [self zm_safeObjectAtIndex:index];
     }
-    
 }
 
-- (id)zm_safeObjectAtIndexedSubscript:(NSUInteger)index{
-    @autoreleasepool {
+- (id)zm_safeObjectAtIndexedSubscript:(NSUInteger)index
+{
+    @autoreleasepool
+    {
         if (index >= self.count) return nil;
-        
         return [self zm_safeObjectAtIndexedSubscript:index];
     }
 }
