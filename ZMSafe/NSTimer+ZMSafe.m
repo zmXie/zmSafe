@@ -44,6 +44,7 @@
     });
 }
 
+#pragma mark -- swizzling methods
 + (NSTimer *)zm_timerWithTimeInterval:(NSTimeInterval)ti target:(id)aTarget selector:(SEL)aSelector userInfo:(nullable id)userInfo repeats:(BOOL)yesOrNo
 {
     ZMTimerTarget *timeTarget = [ZMTimerTarget new];

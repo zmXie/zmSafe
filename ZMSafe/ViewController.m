@@ -30,9 +30,21 @@
     [self testArray];
     [self testDic];
     [self testUIKit];
-    
+    [self setValue:@(YES) forKey:@"zm_navigationBarHidden"];
 //    [self logSubViews:self.navigationController.navigationBar];
 }
+
+//- (void)viewWillAppear:(BOOL)animated
+//{
+//    [super viewWillAppear:animated];
+//    [self.navigationController setNavigationBarHidden:YES animated:animated];
+//}
+//
+//- (void)viewWillDisappear:(BOOL)animated
+//{
+//    [super viewWillDisappear:animated];
+//    [self.navigationController setNavigationBarHidden:NO animated:animated];
+//}
 
 - (void)logSubViews:(UIView *)view
 {
@@ -83,7 +95,7 @@
     self.zm_label.layer.masksToBounds = YES;
     self.zm_label.layer.borderColor = [UIColor grayColor].CGColor;
     self.zm_label.layer.borderWidth = 0.5;
-    self.zm_label.textEdgeInset = UIEdgeInsetsMake(5, 5, 5, 5);
+    self.zm_label.zm_textEdgeInset = UIEdgeInsetsMake(5, 5, 5, 5);
     
     
 //    NSLog(@"%@",[[UIPageControl class] zm_propertyList]);
@@ -104,7 +116,7 @@
     greenBtn.backgroundColor = [UIColor greenColor];
     [greenBtn addTarget:self action:@selector(greenBtnAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:greenBtn];
-    greenBtn.hitEdgeInsets = UIEdgeInsetsMake(-50, -50, -50, -50);
+    greenBtn.zm_hitEdgeInsets = UIEdgeInsetsMake(-50, -50, -50, -50);
     
     UIControl *control = [[UIControl alloc]initWithFrame:CGRectMake(100, 400, 80, 80)];
     control.backgroundColor = [UIColor grayColor];

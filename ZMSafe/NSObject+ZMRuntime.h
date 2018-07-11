@@ -4,7 +4,7 @@
 //
 //  Created by xzm on 2018/7/4.
 //  Copyright © 2018年 CHT-Technology. All rights reserved.
-//  
+//  获取类所有的属性、成员变量、方法、协议
 
 #import <Foundation/Foundation.h>
 

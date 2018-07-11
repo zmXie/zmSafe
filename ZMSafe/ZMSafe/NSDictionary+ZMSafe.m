@@ -31,7 +31,6 @@ static NSString *KDictionaryClass = @"__NSPlaceholderDictionary";
 
         if(!objects[i]) objects[i] = @"";
     }
-    
     return [self zm_safeInitWithObjects:objects forKeys:keys count:cnt];
 }
 

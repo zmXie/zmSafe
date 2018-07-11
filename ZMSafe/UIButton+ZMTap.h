@@ -11,6 +11,6 @@
 @interface UIButton (ZMTap)
 
 /** 控制按钮的点击范围 {上，左，下，右}*/
-@property (nonatomic,assign) UIEdgeInsets hitEdgeInsets;
+@property (nonatomic,assign) UIEdgeInsets zm_hitEdgeInsets;
 
 @end

@@ -4,7 +4,7 @@
 //
 //  Created by CHT-Technology on 2017/4/25.
 //  Copyright © 2017年 CHT-Technology. All rights reserved.
-//
+//  这里使用MRC，为了修复[UIKeyboardLayoutStar release]: message sent to deallocated instance的Bug，该文件需要添加-fno-objc-arc
 
 #import "NSMutableArray+ZMSafe.h"
 #import "NSObject+Swizzle.h"

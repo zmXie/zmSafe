@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		044269BA20ECA12500BABB85 /* NSObject+ZMRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 044269B920ECA12500BABB85 /* NSObject+ZMRuntime.m */; };
+		044294B920F48A1E00D6C069 /* UINavigationController+ZMBarHide.m in Sources */ = {isa = PBXBuildFile; fileRef = 044294B820F48A1E00D6C069 /* UINavigationController+ZMBarHide.m */; };
+		044294BC20F491DF00D6C069 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044294BB20F491DF00D6C069 /* ThirdViewController.m */; };
 		044440B620EE098200B889F3 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044440B520EE098200B889F3 /* SecondViewController.m */; };
 		044440B920EE107100B889F3 /* NSTimer+ZMSafe.m in Sources */ = {isa = PBXBuildFile; fileRef = 044440B820EE107100B889F3 /* NSTimer+ZMSafe.m */; };
 		044440BF20EE2AC600B889F3 /* UILabel+ZMMargin.m in Sources */ = {isa = PBXBuildFile; fileRef = 044440BE20EE2AC600B889F3 /* UILabel+ZMMargin.m */; };
@@ -57,6 +59,10 @@
 /* Begin PBXFileReference section */
 		044269B820ECA12500BABB85 /* NSObject+ZMRuntime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+ZMRuntime.h"; sourceTree = "<group>"; };
 		044269B920ECA12500BABB85 /* NSObject+ZMRuntime.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ZMRuntime.m"; sourceTree = "<group>"; };
+		044294B720F48A1E00D6C069 /* UINavigationController+ZMBarHide.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+ZMBarHide.h"; sourceTree = "<group>"; };
+		044294B820F48A1E00D6C069 /* UINavigationController+ZMBarHide.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+ZMBarHide.m"; sourceTree = "<group>"; };
+		044294BA20F491DF00D6C069 /* ThirdViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
+		044294BB20F491DF00D6C069 /* ThirdViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
 		044440B420EE098200B889F3 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		044440B520EE098200B889F3 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		044440B720EE107100B889F3 /* NSTimer+ZMSafe.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSTimer+ZMSafe.h"; sourceTree = "<group>"; };
@@ -201,6 +207,8 @@
 				AE8A01FB1FF0A4A40066A706 /* ViewController.m */,
 				044440B420EE098200B889F3 /* SecondViewController.h */,
 				044440B520EE098200B889F3 /* SecondViewController.m */,
+				044294BA20F491DF00D6C069 /* ThirdViewController.h */,
+				044294BB20F491DF00D6C069 /* ThirdViewController.m */,
 				04468C0D20E9C8550023CB2C /* TestArray.h */,
 				04468C0E20E9C8550023CB2C /* TestArray.m */,
 				AE8A02421FF0A7B60066A706 /* PrefixHeader.pch */,
@@ -212,6 +220,8 @@
 				044440C120EE2AE300B889F3 /* UITableView+ZMNoData.m */,
 				04D7E3C620EF6182009A92D7 /* UINavigationBar+ZMCover.h */,
 				04D7E3C720EF6182009A92D7 /* UINavigationBar+ZMCover.m */,
+				044294B720F48A1E00D6C069 /* UINavigationController+ZMBarHide.h */,
+				044294B820F48A1E00D6C069 /* UINavigationController+ZMBarHide.m */,
 				044269B820ECA12500BABB85 /* NSObject+ZMRuntime.h */,
 				044269B920ECA12500BABB85 /* NSObject+ZMRuntime.m */,
 				044440B720EE107100B889F3 /* NSTimer+ZMSafe.h */,
@@ -471,10 +481,12 @@
 				AE8A01FC1FF0A4A40066A706 /* ViewController.m in Sources */,
 				044440B920EE107100B889F3 /* NSTimer+ZMSafe.m in Sources */,
 				AE8A02071FF0A4A40066A706 /* main.m in Sources */,
+				044294B920F48A1E00D6C069 /* UINavigationController+ZMBarHide.m in Sources */,
 				044440BF20EE2AC600B889F3 /* UILabel+ZMMargin.m in Sources */,
 				AE8A023B1FF0A5A20066A706 /* NSDictionary+ZMSafe.m in Sources */,
 				044440B620EE098200B889F3 /* SecondViewController.m in Sources */,
 				04468C0F20E9C8550023CB2C /* TestArray.m in Sources */,
+				044294BC20F491DF00D6C069 /* ThirdViewController.m in Sources */,
 				044440C520EE2B4200B889F3 /* UIButton+ZMTap.m in Sources */,
 				AE8A023E1FF0A5A20066A706 /* NSMutableString+ZMSafe.m in Sources */,
 				AE8A01F91FF0A4A40066A706 /* AppDelegate.m in Sources */,
