@@ -12,6 +12,27 @@
 #import "UITableView+ZMNoData.h"
 #import "UINavigationController+ZMBarHide.h"
 
+@interface ZMTableView : UITableView
+
+@end
+
+@implementation ZMTableView
+
+//- (nullable UIView *)hitTest:(CGPoint)point withEvent:(nullable UIEvent *)event;
+//{
+//    UIView *view = [super hitTest:point withEvent:event];
+//    NSLog(@"%@",view);
+//    NSLog(@"%@",NSStringFromClass(self.class));
+//    if([view isKindOfClass:self.class])
+//    {
+//        
+//        return nil;
+//    }
+//    return view;
+//}
+
+@end
+
 @interface SecondViewController ()<UITableViewDelegate,UITableViewDataSource>
 {
     NSInteger _count;
@@ -31,7 +52,10 @@
     self.title = @"SecondVC";
 //    [self setValue:@(YES) forKey:@"zm_interactivePopDisabled"];
 //    [self testTimer];
-//    [self testTableView];
+    [self testTableView];
+    
+//    [self setValue:@(YES) forKey:@"zm_navigationBarHidden"];
+    [self valueForKey:@"uuu"];
 }
 
 //- (void)viewWillAppear:(BOOL)animated
@@ -48,7 +72,7 @@
 
 - (void)testTableView
 {
-    self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth([UIScreen mainScreen].bounds), CGRectGetHeight([UIScreen mainScreen].bounds)) style:UITableViewStylePlain];
+    self.tableView = [[ZMTableView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetWidth([UIScreen mainScreen].bounds), CGRectGetHeight([UIScreen mainScreen].bounds)) style:UITableViewStylePlain];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cell"];
     self.tableView.tableHeaderView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, CGRectGetMaxX([UIScreen mainScreen].bounds), 200)];
     self.tableView.tableFooterView = [UIView new];
@@ -59,11 +83,12 @@
     [self.view addSubview:self.tableView];
     
     [self changeCount];
+    
 }
 
 - (void)changeCount
 {
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         _count = _count == 0 ? 50 : 0;
         [self.tableView reloadData];
 //        [self changeCount];

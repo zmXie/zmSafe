@@ -33,17 +33,6 @@
     NSLog(@"empty");
 }
 
-- (void)logMethodList
-{
-    unsigned int count = 0;
-    Method *methodList = class_copyMethodList([self class], &count);
-    for (int i = 0; i < count; i ++) {
-        Method method = methodList[i];
-        SEL sel = method_getName(method);
-        NSLog(@"%@",NSStringFromSelector(sel));
-    }
-}
-
 /**
  消息转发方法
  
@@ -85,6 +74,23 @@
         // 构造自定义方法的签名
         return [[self class] instanceMethodSignatureForSelector: @selector(empty)];
     }
+}
+
+/**
+ 重写KVC赋值操作中未识别的key，避免crash
+ */
+- (void)setValue:(id)value forUndefinedKey:(NSString *)key
+{
+    NSLog(@"[%@ setValue:forUndefinedKey:%@]",NSStringFromClass(self.class),key);
+}
+
+/**
+ 重写KVC获取操作中未识别的key，避免crash
+ */
+- (nullable id)valueForUndefinedKey:(NSString *)key
+{
+    NSLog(@"[%@ valueForUndefinedKey:%@]",NSStringFromClass(self.class),key);
+    return [NSNull null];
 }
 
 @end

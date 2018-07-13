@@ -34,7 +34,7 @@
         class_replaceMethod(srcClass, swizzledSel, method_getImplementation(srcMethod), method_getTypeEncoding(srcMethod));
     }else
     {
-      method_exchangeImplementations(srcMethod, swizzledMethod);
+        method_exchangeImplementations(srcMethod, swizzledMethod);
     }
 }
 
@@ -68,3 +68,4 @@
 }
 
 @end
+

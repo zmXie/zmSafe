@@ -30,21 +30,22 @@
     [self testArray];
     [self testDic];
     [self testUIKit];
-    [self setValue:@(YES) forKey:@"zm_navigationBarHidden"];
+//    [self setValue:@(YES) forKey:@"zm_navigationBarHidden"];
+
 //    [self logSubViews:self.navigationController.navigationBar];
 }
 
-//- (void)viewWillAppear:(BOOL)animated
-//{
-//    [super viewWillAppear:animated];
-//    [self.navigationController setNavigationBarHidden:YES animated:animated];
-//}
-//
-//- (void)viewWillDisappear:(BOOL)animated
-//{
-//    [super viewWillDisappear:animated];
-//    [self.navigationController setNavigationBarHidden:NO animated:animated];
-//}
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+}
 
 - (void)logSubViews:(UIView *)view
 {

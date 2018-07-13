@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040DDC0920F6F5EF00C38A28 /* FourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 040DDC0820F6F5EF00C38A28 /* FourViewController.m */; };
 		044269BA20ECA12500BABB85 /* NSObject+ZMRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 044269B920ECA12500BABB85 /* NSObject+ZMRuntime.m */; };
 		044294B920F48A1E00D6C069 /* UINavigationController+ZMBarHide.m in Sources */ = {isa = PBXBuildFile; fileRef = 044294B820F48A1E00D6C069 /* UINavigationController+ZMBarHide.m */; };
 		044294BC20F491DF00D6C069 /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044294BB20F491DF00D6C069 /* ThirdViewController.m */; };
@@ -57,6 +58,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		040DDC0720F6F5EF00C38A28 /* FourViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FourViewController.h; sourceTree = "<group>"; };
+		040DDC0820F6F5EF00C38A28 /* FourViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FourViewController.m; sourceTree = "<group>"; };
 		044269B820ECA12500BABB85 /* NSObject+ZMRuntime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+ZMRuntime.h"; sourceTree = "<group>"; };
 		044269B920ECA12500BABB85 /* NSObject+ZMRuntime.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ZMRuntime.m"; sourceTree = "<group>"; };
 		044294B720F48A1E00D6C069 /* UINavigationController+ZMBarHide.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+ZMBarHide.h"; sourceTree = "<group>"; };
@@ -209,6 +212,8 @@
 				044440B520EE098200B889F3 /* SecondViewController.m */,
 				044294BA20F491DF00D6C069 /* ThirdViewController.h */,
 				044294BB20F491DF00D6C069 /* ThirdViewController.m */,
+				040DDC0720F6F5EF00C38A28 /* FourViewController.h */,
+				040DDC0820F6F5EF00C38A28 /* FourViewController.m */,
 				04468C0D20E9C8550023CB2C /* TestArray.h */,
 				04468C0E20E9C8550023CB2C /* TestArray.m */,
 				AE8A02421FF0A7B60066A706 /* PrefixHeader.pch */,
@@ -489,6 +494,7 @@
 				044294BC20F491DF00D6C069 /* ThirdViewController.m in Sources */,
 				044440C520EE2B4200B889F3 /* UIButton+ZMTap.m in Sources */,
 				AE8A023E1FF0A5A20066A706 /* NSMutableString+ZMSafe.m in Sources */,
+				040DDC0920F6F5EF00C38A28 /* FourViewController.m in Sources */,
 				AE8A01F91FF0A4A40066A706 /* AppDelegate.m in Sources */,
 				04D7E3C820EF6182009A92D7 /* UINavigationBar+ZMCover.m in Sources */,
 				044440C220EE2AE300B889F3 /* UITableView+ZMNoData.m in Sources */,

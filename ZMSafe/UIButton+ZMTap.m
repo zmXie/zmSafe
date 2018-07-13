@@ -25,19 +25,19 @@ static const CGFloat EventTimeInterval = 0.5;
 {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        [self zm_swizzleInstanceMethodWithSrcClass:[self class] srcSel:@selector(sendAction:to:forEvent:) swizzledSel:@selector(th_sendAction:to:forEvent:)];
+        [self zm_swizzleInstanceMethodWithSrcClass:[self class] srcSel:@selector(sendAction:to:forEvent:) swizzledSel:@selector(zm_sendAction:to:forEvent:)];
     });
 }
 
 #pragma mark -- swizzling methods
-- (void)th_sendAction:(SEL)action to:(nullable id)target forEvent:(nullable UIEvent *)event
+- (void)zm_sendAction:(SEL)action to:(nullable id)target forEvent:(nullable UIEvent *)event
 {
     if(self.isIgnoreEvent) return;
     self.isIgnoreEvent = YES;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(EventTimeInterval * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         self.isIgnoreEvent = NO;
     });
-    [self th_sendAction:action to:target forEvent:event];
+    [self zm_sendAction:action to:target forEvent:event];
 }
 
 #pragma mark -- cover system
