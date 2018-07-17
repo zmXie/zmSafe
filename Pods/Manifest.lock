@@ -1,22 +1,26 @@
 PODS:
+  - MJExtension (3.0.15.1)
   - ReactiveObjC (3.0.0)
   - SensorsAnalyticsSDK (1.10.6):
     - SensorsAnalyticsSDK/core (= 1.10.6)
   - SensorsAnalyticsSDK/core (1.10.6)
 
 DEPENDENCIES:
+  - MJExtension
   - ReactiveObjC (~> 3.0.0)
   - SensorsAnalyticsSDK
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - MJExtension
     - ReactiveObjC
     - SensorsAnalyticsSDK
 
 SPEC CHECKSUMS:
+  MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
   ReactiveObjC: ce79989e8684b9086b5f8d0c74bc7b81a8729c9e
   SensorsAnalyticsSDK: 3998c7876e200c15a7ff14eccc1dc5463a4f763b
 
-PODFILE CHECKSUM: f0081f8e39bb580ffb64f1280b3789a63520db95
+PODFILE CHECKSUM: ae802b8ac38995f25a46b1dc82c3a3dfb672e7d9
 
 COCOAPODS: 1.5.3

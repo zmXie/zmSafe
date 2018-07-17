@@ -21,10 +21,9 @@
                                       srcSel:(SEL)srcSel
                                  swizzledSel:(SEL)swizzledSel
 {
-    if (!srcClass || !srcSel || !swizzledSel) return;
-    
     Method srcMethod = class_getInstanceMethod(srcClass, srcSel);
     Method swizzledMethod = class_getInstanceMethod([self class], swizzledSel);
+    if (!srcClass || !srcMethod || !swizzledMethod) return;
     
     //加一层保护措施，如果添加成功，则表示该方法不存在于本类，而是存在于父类中，不能交换父类的方法,否则父类的对象调用该方法会crash；添加失败则表示本类存在该方法
     BOOL addMethod = class_addMethod(srcClass, srcSel, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod));
@@ -50,10 +49,9 @@
                                    srcSel:(SEL)srcSel
                               swizzledSel:(SEL)swizzledSel
 {
-    if (!srcClass || !srcSel || !swizzledSel) return;
-    
     Method srcMethod = class_getClassMethod(srcClass, srcSel);
     Method swizzledMethod = class_getClassMethod([self class], swizzledSel);
+    if (!srcClass || !srcMethod || !swizzledMethod) return;
     
     //注意：类方法是存在于元类中，所以要添加到元类
     srcClass = objc_getMetaClass(class_getName(srcClass));

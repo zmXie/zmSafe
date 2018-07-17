@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1915BBBA8288D4D777E8FF3F3279A991"
+               BlueprintIdentifier = "7E11FDE64A95643F47619AC3072BDD39"
                BlueprintName = "SensorsAnalyticsSDK"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "libSensorsAnalyticsSDK.a">

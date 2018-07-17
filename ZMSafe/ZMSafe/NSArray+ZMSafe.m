@@ -11,7 +11,7 @@
 
 @implementation NSArray (ZMSafe)
 static NSString *KArrayClass = @"__NSArrayI";
-static NSString *KArrayInitClass = @"__NSPlaceholderArray";
+static NSString *KArrayInitClass = @"__NSPlaceholderArray111";
 
 
 +(void)load

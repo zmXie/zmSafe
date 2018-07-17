@@ -22,7 +22,7 @@
     
     [[UINavigationBar appearance] setShadowImage:[UIImage new]];
 //    [[UINavigationBar appearance] setBackgroundImage:[self imageWithColor:[UIColor orangeColor]] forBarMetrics:UIBarMetricsDefault];
-    [[UINavigationBar appearance] setTranslucent:NO];
+//    [[UINavigationBar appearance] setTranslucent:NO];
     
     [[UINavigationBar appearance] setBackIndicatorImage:[[UIImage imageNamed:@"title_icon_back"]imageWithRenderingMode:UIImageRenderingModeAutomatic]];
     [[UINavigationBar appearance] setBackIndicatorTransitionMaskImage:[[UIImage imageNamed:@"title_icon_back"]imageWithRenderingMode:UIImageRenderingModeAutomatic]];

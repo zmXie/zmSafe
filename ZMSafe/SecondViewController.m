@@ -58,17 +58,17 @@
     [self valueForKey:@"uuu"];
 }
 
-//- (void)viewWillAppear:(BOOL)animated
-//{
-//    [super viewWillAppear:animated];
-//    [self scrollViewDidScroll:self.tableView];
-//}
-//
-//- (void)viewWillDisappear:(BOOL)animated
-//{
-//    [self.navigationController.navigationBar zm_reset];
-//    [super viewWillDisappear:animated];
-//}
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self scrollViewDidScroll:self.tableView];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [self.navigationController.navigationBar zm_reset];
+    [super viewWillDisappear:animated];
+}
 
 - (void)testTableView
 {
@@ -117,8 +117,8 @@
     [self.navigationController.navigationBar zm_setBackgroundColor:[[UIColor magentaColor] colorWithAlphaComponent:persent]];
     self.navigationController.navigationBar.tintColor = [UIColor colorWithWhite:persent alpha:1];
 
-//    [self.navigationController.navigationBar zm_setTranslationY:MIN(0, -44 * MIN(1, persent))];
-//    [self.navigationController.navigationBar zm_setElementAlpha:MAX(0, 1-persent)];
+    [self.navigationController.navigationBar zm_setTranslationY:MIN(0, -44 * MIN(1, persent))];
+    [self.navigationController.navigationBar zm_setElementAlpha:MAX(0, 1-persent)];
 }
 
 - (void)testTimer

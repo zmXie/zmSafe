@@ -26,9 +26,10 @@
 
     self.title = @"FirstVC";
     
-    [self testMethod];
     [self testArray];
     [self testDic];
+    [self testStr];
+    [self testMethod];
     [self testUIKit];
 //    [self setValue:@(YES) forKey:@"zm_navigationBarHidden"];
 
@@ -83,6 +84,12 @@
     NSLog(@"字典输出:%@",dic);
 }
 
+- (void)testStr
+{
+    NSString *str = @"abc";
+    [str substringFromIndex:4];
+}
+
 - (void)testUIKit
 {
     UIPageControl *pageControl = [[UIPageControl alloc]initWithFrame:CGRectMake(50, 84, 200, 30)];
@@ -108,6 +115,9 @@
 
 - (void)testMethod
 {
+    NSString *str = @(1);
+    [str isEqualToString:@"tt"];
+    
     UIButton *btn = [[UIButton alloc]initWithFrame:CGRectMake(100, 150, 80, 80)];
     btn.backgroundColor = [UIColor redColor];
     [btn addTarget:self action:@selector(redBtnAction:) forControlEvents:UIControlEventTouchUpInside];

@@ -46,7 +46,6 @@
     if (![self respondsToSelector:anInvocation.selector])
     {
         // 拿到方法对象，method其实就相当于在SEL跟IMP之间作了一个映射，有了SEL，我们便可以找到对应的IMP
-        NSLog(@"%@--%@",self,[self class]);
         Method method = class_getClassMethod([self class], @selector(empty));
         // 获取函数类型，有没有返回参数，传入参数
         const char *type = method_getTypeEncoding(method);
