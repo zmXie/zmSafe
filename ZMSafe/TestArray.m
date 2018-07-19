@@ -7,11 +7,13 @@
 //
 
 #import "TestArray.h"
+#import "NSObject+Swizzle.h"
 
 @implementation TestArray
-+ (void)load
-{
-    [super load];
-}
+//+ (void)load
+//{
+////    [super load];
+//    
+//}
 
 @end

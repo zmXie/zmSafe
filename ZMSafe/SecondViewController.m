@@ -52,23 +52,23 @@
     self.title = @"SecondVC";
 //    [self setValue:@(YES) forKey:@"zm_interactivePopDisabled"];
 //    [self testTimer];
-    [self testTableView];
+//    [self testTableView];
     
 //    [self setValue:@(YES) forKey:@"zm_navigationBarHidden"];
     [self valueForKey:@"uuu"];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    [self scrollViewDidScroll:self.tableView];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [self.navigationController.navigationBar zm_reset];
-    [super viewWillDisappear:animated];
-}
+//- (void)viewWillAppear:(BOOL)animated
+//{
+//    [super viewWillAppear:animated];
+//    [self scrollViewDidScroll:self.tableView];
+//}
+//
+//- (void)viewWillDisappear:(BOOL)animated
+//{
+//    [self.navigationController.navigationBar zm_reset];
+//    [super viewWillDisappear:animated];
+//}
 
 - (void)testTableView
 {
@@ -137,7 +137,7 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    [self.navigationController.zm_ignoreVCs addObject:NSStringFromClass([ThirdViewController class])];
+//    [self.navigationController.zm_ignoreVCs addObject:NSStringFromClass([ThirdViewController class])];
     [self.navigationController pushViewController:[ThirdViewController new] animated:YES];
 }
 

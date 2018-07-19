@@ -12,6 +12,33 @@
 #import "UIButton+ZMTap.h"
 #import "NSObject+ZMRuntime.h"
 #import "UILabel+ZMMargin.h"
+#import "Person.h"
+#import "TestArray.h"
+
+@interface CustomView: UIView
+
+@end
+
+@implementation CustomView
+
+//+ (void)load
+//{
+//    Method srcMethod = class_getInstanceMethod([ViewController class], @selector(viewWillAppear:));
+//    Method swizzledMethod = class_getInstanceMethod([self class], @selector(zm_viewWillAppear:));
+//    //该类为nil || 该类或者其父类没有这个方法，则不执行交换
+//    if (!srcMethod || !swizzledMethod) return;
+//
+//    method_exchangeImplementations(srcMethod, swizzledMethod);
+//
+//}
+//
+//- (void)zm_viewWillAppear:(BOOL)animated
+//{
+//    [self zm_viewWillAppear:animated];
+//}
+
+@end
+
 
 @interface ViewController ()
 
@@ -25,52 +52,46 @@
     [super viewDidLoad];
 
     self.title = @"FirstVC";
-    
     [self testArray];
     [self testDic];
     [self testStr];
     [self testMethod];
     [self testUIKit];
-//    [self setValue:@(YES) forKey:@"zm_navigationBarHidden"];
-
-//    [self logSubViews:self.navigationController.navigationBar];
+//    [self testStudent];
+    [self setValue:@(YES) forKey:@"zm_navigationBarHidden"];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:YES animated:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-    [self.navigationController setNavigationBarHidden:NO animated:animated];
-}
-
-- (void)logSubViews:(UIView *)view
-{
-    for (UIView *subView in view.subviews)
-    {
-        NSLog(@"%@",subView);
-        if(subView.subviews.count > 0)
-        {
-            [self logSubViews:subView];
-        }
-    }
-}
+//- (void)viewWillAppear:(BOOL)animated
+//{
+//    [super viewWillAppear:animated];
+//    [self.navigationController setNavigationBarHidden:YES animated:NO];
+//}
+//
+//- (void)viewWillDisappear:(BOOL)animated
+//{
+//    [super viewWillDisappear:animated];
+//    [self.navigationController setNavigationBarHidden:NO animated:animated];
+//}
 
 - (void)testArray
 {
     NSString *a = nil;
-    NSArray *arr = @[@"1",@"2",a];
-    NSLog(@"数组第三个元素：%@",[arr objectAtIndex:2]);
+    
+    NSArray *emptyArr = @[];
+    [emptyArr arrayByAddingObject:a];
+    
+    NSArray *singleArr = @[@"1"];
+    [singleArr objectAtIndex:2];
+    
+    NSArray *multiArr = @[@"1",@"2",a];
+    NSLog(@"数组第4个元素：%@",[multiArr objectAtIndex:3]);
     
     NSMutableArray *mArr = [NSMutableArray array];
     [mArr addObject:@"1"];
     [mArr objectAtIndex:2];
     [mArr addObject:a];
     NSLog(@"可变数组:%@",mArr);
+
 }
 
 - (void)testDic
@@ -92,6 +113,7 @@
 
 - (void)testUIKit
 {
+    
     UIPageControl *pageControl = [[UIPageControl alloc]initWithFrame:CGRectMake(50, 84, 200, 30)];
     pageControl.numberOfPages = 5;
     pageControl.backgroundColor = [UIColor orangeColor];
@@ -138,6 +160,11 @@
     
 }
 
+- (void)testStudent
+{
+    [[Student new] sayHello];
+}
+
 - (void)redBtnAction:(UIButton *)btn
 {
     NSLog(@"点击了红按钮");
@@ -152,6 +179,18 @@
 {
     NSLog(@"点击了灰色按钮");
     [self.navigationController pushViewController:[NSClassFromString(@"SecondViewController") new] animated:YES];
+}
+
+- (void)logSubViews:(UIView *)view
+{
+    for (UIView *subView in view.subviews)
+    {
+        NSLog(@"%@",subView);
+        if(subView.subviews.count > 0)
+        {
+            [self logSubViews:subView];
+        }
+    }
 }
 
 

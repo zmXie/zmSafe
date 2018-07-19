@@ -23,6 +23,7 @@
 {
     Method srcMethod = class_getInstanceMethod(srcClass, srcSel);
     Method swizzledMethod = class_getInstanceMethod([self class], swizzledSel);
+    //该类为nil || 该类或者其父类没有这个方法，则不执行交换
     if (!srcClass || !srcMethod || !swizzledMethod) return;
     
     //加一层保护措施，如果添加成功，则表示该方法不存在于本类，而是存在于父类中，不能交换父类的方法,否则父类的对象调用该方法会crash；添加失败则表示本类存在该方法

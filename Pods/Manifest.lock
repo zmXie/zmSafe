@@ -1,26 +1,36 @@
 PODS:
+  - Aspects (1.4.1)
   - MJExtension (3.0.15.1)
   - ReactiveObjC (3.0.0)
   - SensorsAnalyticsSDK (1.10.6):
     - SensorsAnalyticsSDK/core (= 1.10.6)
   - SensorsAnalyticsSDK/core (1.10.6)
+  - YYCategories (1.0.4):
+    - YYCategories/no-arc (= 1.0.4)
+  - YYCategories/no-arc (1.0.4)
 
 DEPENDENCIES:
+  - Aspects
   - MJExtension
   - ReactiveObjC (~> 3.0.0)
   - SensorsAnalyticsSDK
+  - YYCategories
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Aspects
     - MJExtension
     - ReactiveObjC
     - SensorsAnalyticsSDK
+    - YYCategories
 
 SPEC CHECKSUMS:
+  Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
   ReactiveObjC: ce79989e8684b9086b5f8d0c74bc7b81a8729c9e
   SensorsAnalyticsSDK: 3998c7876e200c15a7ff14eccc1dc5463a4f763b
+  YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
 
-PODFILE CHECKSUM: ae802b8ac38995f25a46b1dc82c3a3dfb672e7d9
+PODFILE CHECKSUM: 7f09f8c8428ae4b2f4c2bb0e9e782b9d1aec781d
 
 COCOAPODS: 1.5.3
